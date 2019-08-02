@@ -26,14 +26,28 @@ class SignUp extends Component {
     axios
       .post("http://localhost:5000/user/createuser", newUser)
       .then(response => {
-       if (response.data.email !== newUser.email || response.data.password!== newUser.password) {
-           response.map((message =>
-           console.log(message)
-           )
-         )
-      }
-    }
-    )
+        console.log(response.data);
+        this.setState({
+          error:response.data
+        })
+        
+        if (
+          response.data.email !== newUser.email &&
+          response.data.password !== newUser.password
+        ) {
+          notifier.innerText =
+            response.data.email + "\n" + response.data.password;
+        } else if (
+          response.data.email !== newUser.email &&
+          response.data.password === undefined
+        ) {
+          notifier.innerText = response.data.email;
+        } else if (response.data.password !== newUser.password) {
+          notifier.innerText = response.data.password;
+        } else {
+          notifier.innerText = "user added";
+        }
+      })
       .catch(err => {
         notifier.innerText = err;
       });
