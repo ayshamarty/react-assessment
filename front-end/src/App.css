@@ -23,6 +23,10 @@
   color: white;
 }
 
+.asterisk {
+  font-size: 13px;
+}
+
 .App-link {
   color: #61dafb;
 }
