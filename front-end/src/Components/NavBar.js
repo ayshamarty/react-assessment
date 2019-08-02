@@ -56,7 +56,7 @@ class NavBar extends Component {
 
           <Route
             path="/login"
-            component={() => <Login userdata={this.state.userdata} />}
+            component={Login}
           />
 
           <Route

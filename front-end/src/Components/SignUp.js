@@ -69,10 +69,10 @@ class SignUp extends Component {
           <input id="create-email" />
           <br />
           <p>password*</p>
-          <input id="create-password" />
+          <input type="password" id="create-password" />
           <br />
           <p>verify password*</p>
-          <input id="verify-password" />
+          <input type="password" id="verify-password" />
           <button type="submit">Sign Up</button>
         </form>
         <div>
