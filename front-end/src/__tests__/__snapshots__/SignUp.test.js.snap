@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot SignUp 1`] = `
+<div
+  className="container"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <h3>
+      Please enter your details to sign up
+    </h3>
+    <p
+      className="asterisk"
+    >
+      fields marked with * are compulsory
+    </p>
+    <br />
+    <p>
+      username*
+    </p>
+    <input
+      id="create-username"
+    />
+    <br />
+    <p>
+      email address*
+    </p>
+    <input
+      id="create-email"
+    />
+    <br />
+    <p>
+      password*
+    </p>
+    <input
+      id="create-password"
+      type="password"
+    />
+    <br />
+    <p>
+      verify password*
+    </p>
+    <input
+      id="verify-password"
+      type="password"
+    />
+    <button
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </form>
+  <div>
+    <span
+      id="notifier"
+    />
+  </div>
+</div>
+`;

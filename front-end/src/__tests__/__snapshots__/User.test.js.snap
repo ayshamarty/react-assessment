@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot User 1`] = `
+<div>
+  <div
+    className="list-group-item"
+    disabled={false}
+    onClick={[Function]}
+  />
+</div>
+`;

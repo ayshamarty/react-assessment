@@ -13,6 +13,10 @@ class Login extends Component {
   }
 
   getOne = (userToGet, passwordToGet) => {
+    this.setState({
+      errors: "",
+      passMatch: ""
+    });
     axios
       .get(`http://localhost:5000/user/name/${userToGet}`)
       .then(response => {
@@ -22,29 +26,32 @@ class Login extends Component {
 
         let thisUser = this.state.thisUser;
         let notifier = document.getElementById("notifier");
-        console.log(thisUser[0].username);
+        // console.log(thisUser[0]);
 
-        thisUser.map((user, index) => {
+        thisUser.forEach(user => {
           if (user.password === passwordToGet) {
             this.setState({
               passMatch: "match"
             });
-            return ""
+            return "";
           } else {
             this.setState({
               errors: "no match"
             });
           }
-          if (this.state.passMatch === "") {
-            notifier.innerText =
-              "username and password combination not found, please try again";
-          } else {
-            notifier.innerText = "logged in";
-          }
         });
+
+        if (this.state.passMatch === "") {
+          notifier.style.color = "red";
+          notifier.innerText = "incorrect username and password combination";
+        } else {
+          notifier.style.color = "black";
+          notifier.innerText = "logged in";
+        }
       })
       .catch(err => {
         let notifier = document.getElementById("notifier");
+        notifier.style.color = "red";
         notifier.innerText = "please enter a valid username";
       });
   };
