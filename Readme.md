@@ -8,6 +8,10 @@
    
 * [Component Hierarchy](#hierarchy)
 
+<br>
+<hr>
+<br>
+
 <a name="wireframes"></a>
 ## Wireframes
 
