@@ -1,4 +1,5 @@
 # React Assessment Documentation
+Quick access to the planning documents for this assessment
 
 ### Quick Links:
 * [Wireframes](#wireframes)
