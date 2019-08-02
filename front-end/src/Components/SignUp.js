@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import "../App.css";
+
 class SignUp extends Component {
   constructor() {
     super();
@@ -28,9 +30,9 @@ class SignUp extends Component {
       .then(response => {
         console.log(response.data);
         this.setState({
-          error:response.data
-        })
-        
+          error: response.data
+        });
+
         if (
           response.data.email !== newUser.email &&
           response.data.password !== newUser.password
@@ -57,12 +59,18 @@ class SignUp extends Component {
     return (
       <div className="container">
         <form onSubmit={this.createUser}>
+          <h3>Please enter your details to sign up</h3>
+          <p className="asterisk">fields marked with * are compulsory</p>
+          <br />
           <p>username*</p>
           <input id="create-username" />
+          <br />
           <p>email address*</p>
           <input id="create-email" />
+          <br />
           <p>password*</p>
           <input id="create-password" />
+          <br />
           <p>verify password*</p>
           <input id="verify-password" />
           <button type="submit">Sign Up</button>

@@ -3,17 +3,32 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
 
-import {Navbar, Button} from "reactstrap";
+import { Navbar, Button } from "reactstrap";
+
 import SignUp from "./SignUp";
+import UserList from "./UserList";
 
 class NavBar extends Component {
-      constructor() {
+  constructor() {
     super();
     this.state = {
-      userdata: [],
+      userdata: []
     };
   }
-render() {
+
+  getAll = () => {
+    axios.get("http://localhost:5000/user/all").then(response => {
+      this.setState({
+        userdata: response.data
+      });
+    });
+  };
+
+    componentDidMount() {
+    this.getAll();
+  }
+
+  render() {
     return (
       <div>
         <Router>
@@ -28,7 +43,7 @@ render() {
                 Login
               </Link>
             </Button>
-            <Button id="signup-button" >
+            <Button id="signup-button">
               <Link className="link" to="/signup">
                 Sign Up
               </Link>
@@ -36,40 +51,30 @@ render() {
           </Navbar>
           <br />
 
-           <Route exact path="/" /> 
-          <Route path="/signup" component={() =><SignUp getAll={this.getAll}/>} />
-           {/* <Route
-            path="/browse"
+          <Route exact path="/" />
+          <Route
+            path="/signup"
+            component={() => <SignUp getAll={this.getAll} />}
+          />
+          <Route
+            path="/users"
             render={props => (
               <div className="container">
                 <div className="row">
                   <div className="col-sm-3 bg-info">
-                    <RecipeList
-                      data={this.state.recipes}
+                    <UserList
+                      userdata={this.state.userdata}
                       getAll={this.getAll}
-                      getID={this.getID}
-                      recipeID={this.recipeID}
-                    />
-                  </div>
-                  <div className="col-sm-1" />
-                  <div className="col-sm-8">
-                    <Recipe
-                      recipeID={this.state.recipeID}
-                      recipes={this.state.recipes}
-                      deleteItem={this.deleteItem}
                     />
                   </div>
                 </div>
               </div>
             )}
-          />  */}
+          />
         </Router>
       </div>
     );
   }
-
-
-
 }
 
 export default NavBar;
