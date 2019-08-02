@@ -19,26 +19,26 @@ render() {
         <Router>
           <Navbar color="dark" light expand="md">
             <Button id="user-button">
-              <Link className="link" to="/">
+              <Link className="link" to="/users">
                 Users
               </Link>
             </Button>
             <Button id="login-button">
-              <Link className="link" to="/create">
+              <Link className="link" to="/login">
                 Login
               </Link>
             </Button>
-            <Button id="signup-button" className="jkadf">
-              <Link className="link" to="/browse">
+            <Button id="signup-button" >
+              <Link className="link" to="/signup">
                 Sign Up
               </Link>
             </Button>
           </Navbar>
           <br />
 
-          <Route exact path="/" />
+           <Route exact path="/" /> 
           <Route path="/signup" component={() =><SignUp getAll={this.getAll}/>} />
-          {/* <Route
+           {/* <Route
             path="/browse"
             render={props => (
               <div className="container">
@@ -62,7 +62,7 @@ render() {
                 </div>
               </div>
             )}
-          /> */}
+          />  */}
         </Router>
       </div>
     );
