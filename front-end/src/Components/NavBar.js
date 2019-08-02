@@ -7,6 +7,7 @@ import { Navbar, Button } from "reactstrap";
 
 import SignUp from "./SignUp";
 import UserList from "./UserList";
+import Login from "./Login";
 
 class NavBar extends Component {
   constructor() {
@@ -24,7 +25,7 @@ class NavBar extends Component {
     });
   };
 
-    componentDidMount() {
+  componentDidMount() {
     this.getAll();
   }
 
@@ -52,10 +53,17 @@ class NavBar extends Component {
           <br />
 
           <Route exact path="/" />
+
+          <Route
+            path="/login"
+            component={() => <Login userdata={this.state.userdata} />}
+          />
+
           <Route
             path="/signup"
             component={() => <SignUp getAll={this.getAll} />}
           />
+
           <Route
             path="/users"
             render={props => (
