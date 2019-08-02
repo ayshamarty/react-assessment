@@ -4,7 +4,7 @@ import "../App.css";
 import axios from "axios";
 
 import {Navbar, Button} from "reactstrap";
-import SignUp from "./Signup";
+import SignUp from "./SignUp";
 
 class NavBar extends Component {
       constructor() {
