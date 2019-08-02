@@ -32,14 +32,19 @@ class SignUp extends Component {
         this.setState({
           error: response.data
         });
-
-        if (
+        if (newUser.email == 0) {
+          notifier.style.color = "red";
+          notifier.innerText = "fields marked with * are required";
+        } else if (
           response.data.email !== newUser.email &&
           response.data.password === undefined
         ) {
           notifier.style.color = "red";
           notifier.innerText = response.data.email;
-        } else if (response.data.password !== newUser.password) {
+        } else if (
+          response.data.password !== newUser.password &&
+          response.data.password === undefined
+        ) {
           notifier.style.color = "red";
           notifier.innerText = response.data.password;
         } else if (
