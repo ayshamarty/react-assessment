@@ -64,7 +64,7 @@ class SignUp extends Component {
       <div className="container">
         <form onSubmit={this.createUser}>
           <h3>Please enter your details to sign up</h3>
-          <p className="asterisk">fields marked with * are compulsory</p>
+          <p className="asterisk">fields marked with * are required</p>
           <br />
           <p>username*</p>
           <input id="create-username" />
