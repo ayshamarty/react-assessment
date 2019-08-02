@@ -44,7 +44,7 @@ class NavBar extends Component {
                 Login
               </Link>
             </Button>
-            <Button id="signup-button">
+            <Button id="signup-button" >
               <Link className="link" to="/signup">
                 Sign Up
               </Link>
@@ -54,10 +54,7 @@ class NavBar extends Component {
 
           <Route exact path="/" />
 
-          <Route
-            path="/login"
-            component={Login}
-          />
+          <Route path="/login" component={Login} />
 
           <Route
             path="/signup"
@@ -69,7 +66,8 @@ class NavBar extends Component {
             render={props => (
               <div className="container">
                 <div className="row">
-                  <div className="col-sm-3 bg-info">
+                  <div className="col-sm-2" />
+                  <div className="col-sm-8" align="center">
                     <UserList
                       userdata={this.state.userdata}
                       getAll={this.getAll}
