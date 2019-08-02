@@ -1,6 +1,6 @@
 # React Assessment Documentation
 
-### Index:
+### Quick Links:
 * [Wireframes](#wireframes)
    * [Sign Up Page](#signup)
    * [Login Page](#login)
