@@ -35,18 +35,22 @@ class SignUp extends Component {
 
         if (
           response.data.email !== newUser.email &&
-          response.data.password !== newUser.password
-        ) {
-          notifier.innerText =
-            response.data.email + "\n" + response.data.password;
-        } else if (
-          response.data.email !== newUser.email &&
           response.data.password === undefined
         ) {
+          notifier.style.color = "red";
           notifier.innerText = response.data.email;
         } else if (response.data.password !== newUser.password) {
+          notifier.style.color = "red";
           notifier.innerText = response.data.password;
+        } else if (
+          response.data.email !== newUser.email &&
+          response.data.password !== newUser.password
+        ) {
+          notifier.style.color = "red";
+          notifier.innerText =
+            response.data.email + "\n" + response.data.password;
         } else {
+          notifier.style.color = "black";
           notifier.innerText = "user added";
         }
       })

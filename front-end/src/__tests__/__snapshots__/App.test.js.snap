@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot App 1`] = `
+<div>
+  <div>
+    <nav
+      className="navbar navbar-expand-md navbar-light bg-dark"
+    >
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        id="user-button"
+        onClick={[Function]}
+      >
+        <a
+          className="link"
+          href="/users"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        id="login-button"
+        onClick={[Function]}
+      >
+        <a
+          className="link"
+          href="/login"
+          onClick={[Function]}
+        >
+          Login
+        </a>
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        id="signup-button"
+        onClick={[Function]}
+      >
+        <a
+          className="link"
+          href="/signup"
+          onClick={[Function]}
+        >
+          Sign Up
+        </a>
+      </button>
+    </nav>
+    <br />
+  </div>
+</div>
+`;
