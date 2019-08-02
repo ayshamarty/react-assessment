@@ -67,7 +67,7 @@ class NavBar extends Component {
               <div className="container">
                 <div className="row">
                   <div className="col-sm-2" />
-                  <div className="col-sm-12" align="center">
+                  <div className="col-sm-8" align="center">
                     <UserList
                       userdata={this.state.userdata}
                       getAll={this.getAll}
